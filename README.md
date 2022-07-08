@@ -1,3 +1,11 @@
+### 🌟 Desarrollo de una plataforma de tareas para la institución Euro School 💚
+
+🔔 Credenciales
+
+Alumno - Cabrera Schenk Micaela 7626772
+
+Admin - Alejandra Ramirez 2037339
+
 # MdbAngularFree
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.2.
