@@ -1,0 +1,1469 @@
+/////////////////////////////////////////
+//////////////   General   //////////////
+/////////////////////////////////////////
+
+
+:host {
+    display: block;
+}
+
+ngx-doc-viewer {
+    width: 100%;
+    height: 80vh;
+}
+  
+body {
+    font-family: "Roboto" !important;
+    src: url("assets/roboto/Roboto-Regular.ttf");
+    background-color: #F5F5F5;
+}
+
+.swal-icon--warning__body, .swal-icon--warning__dot {
+    background-color: #3067ae !important;
+}
+
+.swal-icon--warning {
+    border-color: #3067ae !important;
+    animation: none !important;
+}
+
+.swal-icon--success__ring {
+    border: 4px solid #3067ae;
+}
+
+.swal-icon--success__line {
+    background-color: #3067ae !important;
+}
+
+.swal-title,
+.swal-text {
+    font-size: 16pt !important;
+    font-weight: 500 !important;
+}
+
+.swal-text {
+    font-size: 13pt;
+    font-weight: 400;
+}
+
+.swal-button:focus {
+    box-shadow: none !important;
+}
+
+.swal-button--cancel {
+    color: white !important;
+    font-weight: 400;
+    font-size: 12pt;
+}
+
+.swal-button:not([disabled]):hover,
+.swal-button {
+    background-color: #3067ae !important;
+    font-weight: 400;
+    font-size: 12pt;
+}
+
+.custom-file-label {
+    cursor: pointer;
+}
+
+.custom-file-input:lang(en) ~ .custom-file-label::after {
+    content: none !important;
+}
+
+.custom-file-label::after {
+    position: none !important;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0 !important;
+    display: none !important;
+    height: 0 !important;
+}
+
+.custom-file-input:focus ~ .custom-file-label {
+    border-color: #ced4da !important;
+    box-shadow: none !important;
+}
+
+input[type=file] {
+    cursor: pointer !important;
+}
+
+.form-control:focus {
+    border-color: #ced4da !important;
+    box-shadow: none !important;
+}
+
+button:focus {
+    outline: 0px;
+}
+
+
+////////////////////////////////////
+////////////   Login   /////////////
+////////////////////////////////////
+
+
+div.login {
+    height: 100vh !important;
+    background-image: url('./assets/fondo2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+div.login div.flex-center div.row div.col-lg-12 img {
+    margin-top: 20px;
+}
+
+div.login div.flex-center div.row div.col-lg-12 form {
+    background-color: white !important;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    width: 350px;
+    border-radius: 3%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 15px 30px;
+    text-align: center;
+}
+
+div.login div.flex-center div.row div.col-lg-12 form a {
+    display: inline-block !important;
+    margin: 10px 0px;
+}
+
+div.login div.flex-center div.row div.col-lg-12 form p.inicio-sesion {
+    color: #868686;
+    font-size: 24pt;
+    text-align: center;
+    font-weight: 400;
+    margin-top: 16px;
+}
+
+div.login div.flex-center div.row div.col-lg-12 form div.md-form.ingresar {
+    margin-bottom: 1rem !important;
+}
+
+div.login div.flex-center div.row div.col-lg-12 form div.ingresar button.btn-personalizado {
+    background-color: #3067af !important;
+    color: white !important;
+    width: 134px;
+    height: 45px;
+    border-radius: 8px;
+    font-size: 12pt;
+    font-weight: normal;
+    text-transform: none;
+}
+
+div.login div.flex-center div.row div.col-lg-12 form a.recovery-password {
+    color:#8a8a8a !important;
+    font-weight: 200;
+}
+
+div.login div.flex-center div.row div.col-lg-12 form a.registrarse {
+    color: #3067af !important;
+    font-weight: 500;
+}
+
+
+/////////////////////////////////////////
+//////////////   Navbar   ///////////////
+/////////////////////////////////////////
+
+
+.navbar {
+    padding: 0.6rem 2rem !important;
+    background-color: #3067ae !important;
+}
+
+ul.navbar-nav.nav-flex-icons {
+    display: flex;
+    align-items: baseline;
+}
+
+ul.navbar-nav.nav-flex-icons li a.streaming{
+    font-size: 12pt !important;
+    font-weight: 400;
+}
+
+.navbar a.logo.navbar-brand {
+    font-weight: 400;
+}
+
+.dropdown.show .dropdown-menu {
+    transition: none !important;
+}
+
+.dropdown-menu {
+    will-change: transform !important;
+}
+
+nav div.dropdown-menu.fadeInDropdown {
+    background-color: white !important;
+    border-color: #D9D9D9 !important;
+}
+
+nav div.dropdown-menu.fadeInDropdown.dropdown-menu {
+    padding: 0px !important;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p1 {
+    display: flex;
+    padding: 17px;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p1:hover {
+    background-color: #f3f3f3 !important;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p1 div {
+    padding-left: 13px;
+    width: 188px;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p1 div p {
+    color: #262628 !important;
+    margin: 0px !important;
+    font-size: 11pt;
+    font-weight: normal;
+    cursor: default;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p1 div p:first-child {
+    font-weight: 400;
+    font-size: 11pt;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p1 div button.btn {
+    background-color: #f52d56 !important;
+    margin: 10px 0px 0px 0px !important ;
+    width: 80px;
+    height: 22px;
+    border-radius: 10px;
+    padding: 2px 8px !important;
+    text-transform: none;
+    transition: 0s;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p2 {
+    border-top: 1px #d9d9d9 solid;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p2 div {
+    display: flex !important;
+    align-items: baseline;
+    padding: 12px;
+    cursor: pointer;
+    pointer-events: all;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p2 div:hover {
+    background-color: #f3f3f3 !important;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p2 div i {
+    color: #9B9B9B !important;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p2 div p {
+    font-weight: normal;
+    margin-bottom: 0px !important;
+    margin-left: 20px !important;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p3 {
+    display: flex !important;
+    align-items: baseline;
+    border-top: 1px #d9d9d9 solid;
+    padding: 12px;
+    cursor: pointer;
+    pointer-events: all;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p3:hover {
+    background-color: #f3f3f3 !important;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p3 i {
+    color: #9B9B9B !important;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p3 p {
+    margin-left: 20px !important;
+    font-weight: normal;
+    margin-bottom: 0px !important;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p4 {
+    display: flex !important;
+    align-items: baseline;
+    border-top: 1px #d9d9d9 solid;
+    padding: 12px;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p4:hover {
+    background-color: #f3f3f3 !important;
+    cursor: pointer;
+    pointer-events: all;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p4 i {
+    color: #9B9B9B !important;
+}
+
+nav div.dropdown-menu.fadeInDropdown div.menu-options div.p4 p {
+    margin-left: 20px !important;
+    font-weight: normal;
+    margin-bottom: 0px !important;
+}
+
+
+
+/////////////////////////////////////////
+///////////////   Dash   ////////////////
+/////////////////////////////////////////
+
+
+div.dash {
+    background-color: #F5F5F5;
+    padding-top: 60px !important;
+}
+
+
+/////////////////////////////////////////
+///////////////   Home   ////////////////
+/////////////////////////////////////////
+
+
+div.dash div.background-image-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 169px;
+    background-image: url("./assets/baner-boys.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+div.dash div.background-image-banner div.container div.row div.col-xl-12 p:first-child {
+    font-weight: 500;
+    font-size: 24pt;
+    color: white;
+    text-align: center;
+}
+
+div.dash div.background-image-banner div.container div.row div.col-xl-12 p:last-child {
+    font-weight: 400;
+    font-size: 16pt;
+    color: white;
+    text-align: center;
+}
+
+div.dash div.lecciones {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+/*div.dash div.lecciones div.container {
+    max-width: 1400px !important;
+}*/
+
+div.dash div.lecciones div.containerr.a {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+div.dash div.lecciones div.container.a {
+    margin-top: 50px;
+}
+
+div.dash div.lecciones div.container.a div.row.b {
+    margin-bottom: 50px;
+}
+
+div.dash div.lecciones div.container div.row div.col-xl-4 {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+    padding-bottom: 40px;
+}
+
+div.dash div.lecciones div.container div.row div.col-xl-4 div.card {
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12) !important;
+}
+
+div.dash div.lecciones div.container div.row div.col-xl-4 div.card div.view a {
+    cursor: default;
+}
+
+div.dash div.lecciones div.container div.row div.col-xl-4 div.card div.card-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div.dash div.lecciones div.container div.row div.col-xl-4 div.card div.card-body h4 {
+    color: #A4A4A4;
+    font-weight: 400;
+    margin-bottom: 0px;
+}
+
+div.dash div.lecciones div.container div.row div.col-xl-4 div.card div.card-body a.btn-personalizado {
+    background-color: #3067ae !important;
+    color: white !important;
+    width: 108px !important;
+    height: 44px !important;
+    text-transform: none !important;
+    font-size: 12pt !important;
+    text-align: center;
+    padding: 10px 8px !important;
+    margin: 0 !important;
+    border: 1px solid transparent !important;
+    border-radius: 0.25rem !important;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12)!important;
+}
+
+
+
+/////////////////////////////////////////
+////////////   Mi Perfil   //////////////
+/////////////////////////////////////////
+
+
+div.dash2 {
+    background-color: white !important;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.dash2 mdb-card {
+    width: 320px !important;
+}
+
+div.dash2 div.container-img-perfil div.view.no-image {
+    background-color: #3067ae;
+    height: 220px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.dash2 div.container-img-perfil div.view.si-image {
+    background-color: white;
+    padding-top: 45px;
+    padding-bottom: 45px;
+}
+
+div.dash2 div.container-img-perfil div.view.si-image img {
+    height: 220px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.dash2 div.container-img-perfil div.view.si-image a.mdb-color.lighten-3 {
+    position: absolute;
+    top: 235px;
+    right: 0;
+    background-color: #495057 !important;
+    color: white !important;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+div.dash2 div.container-img-perfil a.no-img {
+    position: absolute;
+    top: 190px;
+    right: 0;
+    background-color: #495057 !important;
+    color: white !important;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+
+div.dash2 div.view div.height-img-icono i.far.fa-image {
+    color: white !important;
+    font-size: 80pt;
+}
+
+div.dash2 a.pl-1 {
+    padding: 0px !important;
+}
+
+div.dash2 .card a.mdb-color.lighten-3 i {
+    font-size: 16pt;
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+div.dash2 div.container mdb-card mdb-card-body {
+    padding: 0px 45px 45px 45px !important;
+}
+
+
+
+/////////////////////////////////////////
+/////////////   Leccion   ///////////////
+/////////////////////////////////////////
+
+
+div.dash3 {
+    background-color: #F5F5F5;
+    padding-top: 50px !important;
+}
+
+div.dash3 div.row.l {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+div.dash3 div.row.l2 {
+    margin-top: 20px;
+}
+
+div.dash3 div.container-p {
+    width: 80% !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.dash3 div.container-p div.no-selected,
+div.dash3 div.container-p div.word,
+div.dash3 div.container-p div.power {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    background-color: white;
+    border-radius: 0.25rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+}
+
+div.dash3 div.container-p div.no-selected p,
+div.dash3 div.container-p div.word a,
+div.dash3 div.container-p div.power a {
+    font-weight: 400;
+    font-size: 16pt;
+    color: #808080;
+}
+
+div.dash3 div.container-p video {
+    width: 100%;
+    border-radius: 0.25rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+}
+
+div.dash3 div.container-p div.img-container {
+    display: block;
+    height: 65vh;
+    overflow-y: scroll;
+    border-radius: 0.25rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+}
+
+div.dash3 div.container-p div.a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65vh;
+    background-color: white;
+    border-radius: 0.25rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+}
+
+div.dash3 div.container-p div.a a {
+    font-weight: 500;
+    font-size: 18pt;
+    color: #3067AF !important;
+}
+
+div.dash3 div.container-p div.img-scroll::-webkit-scrollbar {
+    width: 10px !important;
+    -moz-width: 10px !important;
+    background-color: white !important;
+    -moz-background-color: white !important;
+}
+
+div.dash3 div.container-p div.img-scroll::-webkit-scrollbar-thumb {
+    border-radius: 10px !important;
+    -moz-border-radius: 10px !important;
+    background-color: #3067ae !important;
+    -moz-background-color: #3067ae !important;
+}
+
+div.dash3 div.container-p div.img-container img {
+    width: 100%;
+}
+
+div.dash3 div.container-p div.audio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    background-color: white;
+    border-radius: 0.25rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+}
+
+div.dash3 div.container-p iframe {
+    width: 100%;
+    height: 64vh;
+}
+
+div.dash3 div.container-p div.tablas div.row {
+    margin-bottom: 30px;
+}
+
+div.dash3 div.container-p div.tablas div.row div.col-md-12 button:first-child {
+    background-color: rgba(48, 103, 174, 1);
+    color: white !important;
+    width: 200px !important;
+    text-transform: none !important;
+    font-size: 12pt !important;
+    margin: 0px 20px 0px 0px !important;
+    padding: 10px 8px !important;
+    border: 1px solid transparent;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12) !important;
+}
+
+div.dash3 div.container-p div.tablas div.row div.col-md-12 button:last-child {
+    background-color: rgba(48, 103, 174, 0.8);
+    color: white !important;
+    width: 200px !important;
+    text-transform: none !important;
+    font-size: 12pt !important;
+    margin: 0px 20px 0px 0px !important;
+    padding: 10px 8px !important;
+    border: 1px solid transparent;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12) !important;
+}
+
+.btn-a {
+    background-color: rgba(48, 103, 174, 1) !important;
+}
+
+.btn-d {
+    background-color: rgba(48, 103, 174, 0.8) !important;
+}
+
+div.dash3 div.container-p div.tablas div.row table {
+    border-radius: 0.25rem;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12) !important;
+    margin-bottom: 50px;
+}
+
+div.dash3 div.container-p div.tablas div.row table thead {
+    background-color: #3067ae !important;
+}
+
+div.dash3 div.container-p div.tablas div.row table thead tr th {
+    font-size: 12pt !important;
+}
+
+div.dash3 div.container-p div.tablas div.row table tbody {
+    display: block;
+    max-height: 500px;
+    overflow-y: scroll;
+}
+
+div.dash3 div.container-p div.tablas div.row thead,
+div.dash3 div.container-p div.tablas div.row tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+div.dash3 div.container-p div.tablas div.row table tbody tr th,
+div.dash3 div.container-p div.tablas div.row table tbody tr td {
+    font-size: 12pt !important;
+}
+
+div.dash3 div.container-p div.tablas div.row table tbody tr td {
+    vertical-align: inherit !important;
+}
+
+div.dash3 div.container-p div.tablas div.row table tbody tr td i {
+    color: #3067ae !important;
+    font-size: 14pt;
+    cursor: pointer;
+}
+
+.scrollbar {
+    background: #fff;
+    overflow-y: scroll;
+}
+
+.scrollbar-primary::-webkit-scrollbar {
+    width: 10px !important;
+    -moz-width: 10px !important;
+    background-color: white !important;
+    -moz-background-color: white !important;
+}
+
+.scrollbar-primary::-webkit-scrollbar-thumb {
+    border-radius: 10px !important;
+    -moz-border-radius: 10px !important;
+    background-color: #3067ae !important;
+    -moz-background-color: #3067ae !important;
+}
+
+div.dash3 div.container-p div.card {
+    margin-top: 30px;
+    padding: 20px !important;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+}
+
+div.dash3 div.container-p div.card div {
+    display: flex;
+    justify-content: space-between;
+}
+
+div.dash3 div.container-p div.card p {
+    font-size: 16pt;
+}
+
+div.modal-dialog.subirTarea div.btnn {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 25px;
+}
+
+div.modal-dialog.subirTarea div.btnn button.btn-personalizado {
+    background-color: #3067ae !important;
+    color: white !important;
+    width: 105px !important;
+    text-transform: none !important;
+    font-size: 12pt !important;
+    padding: 10px 8px !important;
+    border: 1px solid transparent;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12) !important;
+}
+
+div.modal-dialog.subirTarea div.modal-body div.cargando p {
+    font-size: 18pt;
+    color: grey;
+    font-weight: 400;
+    margin-top: 15px;
+    margin-bottom: 0px;
+}
+
+
+
+/////////////////////////////////////////
+/////////////   Alumnos   ///////////////
+/////////////////////////////////////////
+
+
+div.dash4 {
+    padding-top: 13vh;
+}
+
+div.dash4 div.alumnos div.container.a {
+    width: 85% !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.dash4 div.alumnos div.row.b div.card {
+    padding: 20px 30px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+}
+
+div.dash4 div.alumnos div.row.b div.card div {
+    display: flex;
+    justify-content: space-between;
+}
+
+div.modal-dialog.a button.btn.btn-personalizado:first-child {
+    margin-left: 0px !important;
+}
+
+div.dash4 div.alumnos div.row.b div.card button.btn.btn-personalizado,
+div.modal-dialog.a button.btn.btn-personalizado {
+    background-color: #3067ae !important;
+    color: white !important;
+    width: 125px !important;
+    height: 44px !important;
+    text-transform: none !important;
+    font-size: 12pt !important;
+    font-weight: lighter;
+    padding: 0px !important;
+    margin: 0px 0px 0px 20px;
+    border-radius: 0.25rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+}
+
+div.dash4 div.alumnos div.row.b div.card div.md-form:first-child {
+    width: 100%;
+    margin-top: 0px !important;
+    margin-bottom: 20px !important;
+}
+
+div.dash4 div.alumnos div.row.b div.card table thead,
+div.dash4 div.alumnos div.row.b div.card table tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+div.dash4 div.alumnos div.row.b div.card table tbody tr:hover {
+    cursor: pointer;
+}
+
+div.dash4 div.alumnos div.row.b div.card table tbody {
+    display: block;
+    max-height: 64.5;
+    overflow-y: scroll;
+}
+
+div.dash4 div.alumnos div.row.b div.card table tbody.scrollbar {
+    height: 64vh;
+    background: #fff;
+    overflow-y: scroll;
+}
+
+div.dash4 div.alumnos div.row.b div.card table .scrollbar-primary::-webkit-scrollbar {
+    width: 8px !important;
+    -moz-width: 10px !important;
+    background-color: #F5F5F5 !important;
+    -moz-background-color: white !important;
+}
+
+div.dash4 div.alumnos div.row.b div.card table .scrollbar-primary::-webkit-scrollbar-thumb {
+    border-radius: 10px !important;
+    -moz-border-radius: 10px !important;
+    background-color: #3067ae !important;
+    -moz-background-color: #3067ae !important;
+}
+
+div.dash4 div.alumnos div.row.b div.card table.table thead {
+    background-color: #3067ae !important;
+}
+
+div.dash4 div.alumnos div.row.b div.card table.table tbody tr td div.f {
+    display: flex !important;
+    justify-content: flex-start;
+}
+
+div.dash4 div.alumnos div.row.b div.card table.table th,
+div.dash4 div.alumnos div.row.b div.card table.table td {
+    vertical-align: baseline;
+}
+
+div.dash4 div.alumnos div.row.b div.card table.table tbody tr td div i {
+    font-size: 12pt;
+    margin: 10px !important;
+    pointer-events: all;
+    cursor: pointer;
+    color: #808080 !important;
+}
+
+div.dash4 div.alumnos div.row.b div.card table.table tbody tr td .dropdown-toggle::after {
+    display: none !important;
+}
+
+div.dash4 div.alumnos div.row.b div.card table.table tbody tr td div div
+div.dropdown-menu.dropdown-primary.dropdown-menu-right.various-dropdown {
+    top: 15px;
+    position: absolute !important;
+    left: auto !important;
+    transform: none !important;
+}
+
+div.dash4 div.alumnos div.row.b div.card table.table tbody tr td div div
+div.dropdown-menu.dropdown-primary.dropdown-menu-right.various-dropdown.fadeInDropdown {
+    top: 15px;
+    position: absolute !important;
+    left: auto !important;
+    transform: none !important;
+}
+
+div.modal-dialog.a div.modal-header {
+    padding: 25px 30px 0px 30px !important;
+    border-bottom: 0px !important;
+}
+
+div.modal-dialog.a div.modal-header p {
+    margin: 0px !important;
+    font-size: 18pt;
+    font-weight: 500;
+    color: #3067ae;
+}
+
+div.modal-dialog.a div.modal-body {
+    padding: 0px 30px 25px 30px;
+}
+
+div.modal-dialog.a div.modal-body div.cargando {
+    text-align: center;
+    height: 542px;
+    width: 441px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.modal-dialog.a div.modal-body div.cargando p {
+    font-size: 18pt;
+    color: grey;
+    font-weight: 400;
+    margin-top: 15px;
+    margin-bottom: 0px;
+}
+
+div.modal-dialog.a div.modal-body .input-group {
+    display: inline-flex;
+    margin-top: 24px !important;
+    margin-bottom: 32px !important;
+}
+
+div.modal-dialog.a .custom-select:focus {
+    border-color: #ced4da !important;
+    box-shadow: none !important;
+}
+
+div.modal-dialog.a div div.modal-body div.btns {
+    display: flex;
+    justify-content: flex-end;
+}
+
+div.modal-dialog.subirTarea div.modal-content div.modal-header button.close {
+    opacity: 0 !important;
+    cursor: default;
+}
+
+div.modal-dialog.subirTarea div.modal-content div.modal-body div.cargando {
+    text-align: center;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.modal-dialog div.modal-content div.modal-body div.formulario div.md-form {
+    margin-top: 1.8rem;
+    margin-bottom: 1.8rem;
+}
+
+div.modal-dialog div.modal-content div.modal-body div.formulario div.md-form.i {
+    margin: 0px !important;
+    padding-top: 24px;
+    padding-bottom: 32px;
+}
+
+div.modal-dialog div.modal-content div.modal-body div.formulario div.md-form.i div.input-real {
+    margin-bottom: 25px;
+}
+
+div.modal-dialog div.modal-content div.modal-body div.formulario div.md-form.i div.input-real input {
+    width: 100%;
+}
+
+div.modal-dialog div.modal-content div.modal-body div.formulario div.md-form div.mi-input {
+    padding: 0px;
+    width: 100%;
+    height: 38px;
+    margin: 0;
+    background: #3067ae;
+    color: white;
+    border-radius: 0.25rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+}
+
+div.modal-dialog div.modal-content div.modal-body div.formulario div.md-form div.mi-input input {
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+    left: 0;
+    height: 38px;
+}
+
+div.modal-dialog div.modal-content div.modal-body div.formulario div.md-form div.mi-input span {
+    position: relative;
+    top: 8px;
+    text-transform: initial;
+    font-size: 11pt;
+}
+
+
+
+/////////////////////////////////////////
+//////////////   Grado   ////////////////
+/////////////////////////////////////////
+
+
+div.dash div.container-n {
+    width: 85% !important;
+    margin-top: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.dash div.container-n div.row div.card {
+    padding: 20px 30px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+}
+
+div.dash div.container-n div.row div.card div.tablaTareas {
+    display: block;
+}
+
+div.dash div.container-n div.row div.card div.ibb {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+div.dash div.container-n div.row div.card div.ibb select.form-control:focus {
+    border-color: #ced4da;
+    box-shadow: none !important;
+}
+
+div.dash div.container-n div.row div.card div div.md-form:first-child {
+    width: 100%;
+    margin-top: 0px !important;
+    margin-bottom: 20px !important;
+}
+
+div.dash div.container-n div.row div.card div button.btn-personalizado {
+    background-color: #3067ae !important;
+    color: white !important;
+    width: 250px;
+    height: 44px !important;
+    text-transform: none !important;
+    font-size: 12pt !important;
+    font-weight: lighter;
+    margin-left: 20px;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+}
+
+div.calificacionAlumno form div.btns {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 25px;
+}
+
+div.calificacionAlumno form button.btn-personalizado.g {
+    width: 100px !important;
+    margin: 0PX;
+    padding: 0px !important;
+}
+
+div.calificacionAlumno form button.btn-personalizado {
+    background-color: #3067ae !important;
+    color: white !important;
+    width: 100px;
+    height: 44px !important;
+    text-transform: none !important;
+    font-size: 12pt !important;
+    font-weight: lighter;
+    margin-left: 20px;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+}
+
+
+
+div.dash div.container-n div.row div.card div.no-tareas,
+div.dash div.container-n div.row div.card div.no-semana {
+    width: 100%;
+    height: 73vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.dash div.container-n div.row div.card div.no-tareas mdb-icon,
+div.dash div.container-n div.row div.card div.no-semana mdb-icon {
+    color: #3067ae;
+    font-size: 30pt;
+    margin-right: 20px;
+}
+
+div.dash div.container-n div.row div.card div.no-tareas p,
+div.dash div.container-n div.row div.card div.no-semana p {
+    color: #3067ae;
+    margin: 0px;
+    font-size: 16pt;
+    font-weight: 400;
+}
+
+div.dash div.container-n div.row div.card table.table {
+    margin-top: 25px;
+}
+
+div.dash div.container-n div.row div.card table.table thead {
+    background-color: #3067ae !important;
+}
+
+div.dash div.container-n div.row div.card table.table tbody tr td div.f {
+    display: flex !important;
+    justify-content: flex-start;
+}
+
+div.dash div.container-n div.row div.card table.table th,
+div.dash div.container-n div.row div.card table.table td {
+    vertical-align: baseline;
+    font-size: 12pt;
+}
+
+div.dash div.container-n div.row div.card table.table tbody tr td div.f {
+    display: flex !important;
+    justify-content: flex-start;
+}
+
+div.dash div.container-n div.row div.card table.table tbody tr td div i {
+    font-size: 12pt;
+    margin: 10px !important;
+    pointer-events: all;
+    cursor: pointer;
+    color: #808080 !important;
+}
+
+div.dash div.container-n div.row div.card table.table tbody {
+    display: block;
+    max-height: 65.5vh;
+    overflow-y: scroll;
+}
+
+div.dash div.container-n div.row div.card table.table thead,
+div.dash div.container-n div.row div.card table.table tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+div.modal-dialog.subirTarea div.modal-header,
+div.modal-dialog.verTareaMaestro div.modal-header,
+div.modal-dialog.calificacionAlumno div.modal-header {
+    padding: 25px 30px 25px 30px !important;
+    border-bottom: 0px !important;
+}
+
+div.modal-dialog.subirTarea div.modal-header p,
+div.modal-dialog.verTareaMaestro div.modal-header p,
+div.modal-dialog.calificacionAlumno div.modal-header p {
+    margin: 0px !important;
+    font-size: 18pt;
+    font-weight: 500;
+    color: #3067ae;
+}
+
+div.modal-dialog.verTareaMaestro div.modal-header p i {
+    color: #6d6e72;
+    font-size: 14pt;
+}
+
+div.modal-dialog.subirTarea div.modal-body,
+div.modal-dialog.verTareaMaestro div.modal-body,
+div.modal-dialog.calificacionAlumno div.modal-body {
+    padding: 0px 30px 25px 30px;
+}
+
+div.modal-dialog.verTareaMaestro div.img-container {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.modal-dialog.verTareaMaestro div.img-container img {
+    //height: 100%;
+    width: 100%;
+}
+
+div.modal-dialog.verTareaMaestro iframe {
+    width: 100%;
+    height: 80vh;
+}
+
+div.modal-dialog.verTareaMaestro pdf-viewer {
+    display: block;
+    height: 65vh !important;
+}
+
+div.modal-dialog.verTareaMaestro pdf-viewer div {
+    display: block;
+    height: 65vh !important;
+}
+
+div.modal-dialog.verTareaMaestro div.audio {
+    text-align: center;
+}
+
+div.modal-dialog.verTareaMaestro div.video {
+    text-align: center;
+}
+
+div.modal-dialog.verTareaMaestro div.video video {
+    height: 100%;
+}
+
+div.modal-dialog.verTareaMaestro div.a {
+    text-align: center;
+}
+
+div.modal-dialog.verTareaMaestro div.a a {
+    font-weight: 500;
+    font-size: 18pt;
+    color: #3067AF !important;
+}
+
+div.modal-dialog.verTareaMaestro div.word a,
+div.modal-dialog.verTareaMaestro div.power a {
+    font-size: 13pt;
+    color: grey;
+    font-weight: 500;
+}
+
+
+
+/////////////////////////////////////////
+////////////   Streaming   //////////////
+/////////////////////////////////////////
+
+
+div.dash div.streaming {
+    width: 100%;
+    height: 92.8vh;
+}
+
+div.dash div.streaming iframe {
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/////////////////////////////////////////
+//////////////   Footer   ///////////////
+/////////////////////////////////////////
+
+footer {
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    background-color: #3067AF !important;
+    width: 100%;
+}
+
+.footer2 {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    background-color: #3067AF !important;
+    width: 100%;
+}
+
+footer p {
+    font-size: 12pt;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+    padding: 8px 0px !important;
+    margin-bottom: 0px !important;
+}
+
+
+
+@media (min-width: 1601px) {
+    div.dash {
+        padding-top: 70px !important;
+    }
+}
+@media (max-width: 1600px) {
+
+    div.dash {
+        padding-top: 70px !important;
+    }
+
+    div.dash div.lecciones {
+        margin-top: 8vh;
+        margin-bottom: 8vh;
+    }
+
+    div.dash3 {
+        padding-top: 70px !important;
+    }
+
+    div.dash3 div.container-p table tbody {
+        height: 800px;
+    }
+}
+
+@media (max-width: 1400px) {
+    div.dash {
+        padding-top: 70px !important;
+    }
+
+    div.dash div.lecciones {
+        margin-top: 4.5vh;
+        margin-bottom: 4.5vh;
+    }
+}
+
+@media (max-width: 1300px) {
+    div.dash {
+        padding-top: 70px !important;
+    }
+
+    div.dash div.lecciones {
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+    }
+}
+
+@media (max-width: 1200px) {
+
+    .container {
+        width: 100% !important;
+    }
+
+    div.dash {
+        padding-top: 70px !important;
+    }
+
+    div.dash div.lecciones {
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+    }
+}
+
+@media (max-width: 1199px) {
+    div.dash3 {
+        padding-top: 100px !important;
+    }
+
+    div.dash3 div.container-p {
+        width: 90% !important;
+    }
+
+    div.dash3 div.container-p table thead tr th:first-child {
+        width: 25% !important;
+    }
+
+    div.dash3 div.container-p table thead tr th:nth-child(2) {
+        width: 30% !important;
+    }
+
+    div.dash3 div.container-p table tbody {
+        height: 420px;
+    }
+
+    div.dash3 div.container-p table tbody tr th:first-child {
+        width: 25% !important;
+    }
+
+    div.dash3 div.container-p table tbody tr th:nth-child(2) {
+        width: 30% !important;
+    }
+}
+
+@media (max-width: 991px) {
+    div.dash {
+        padding-top: 54px !important;
+    }
+    .swal-title {
+        font-size: 20px !important;
+    }
+
+    .navbar {
+        padding: 0.5rem 1rem !important;
+    }
+
+    .navbar a.logo.navbar-brand {
+        font-size: 12pt;
+    }
+
+    nav div.dropdown-menu.fadeInDropdown div.menu-options div.p2 div i {
+        font-size: 11pt;
+    }
+
+    nav div.dropdown-menu.fadeInDropdown div.menu-options div.p2 div p {
+        font-size: 11pt;
+    }
+
+    div.modal-dialog.verTareaMaestro div.img-container {
+        width: 440px;
+    }
+
+    div.modal-dialog.verTareaMaestro iframe {
+        height: 65vh !important;
+    }
+
+    div.dash3 {
+        padding-top: 105px !important;
+    }
+
+    div.dash3 div.container-p {
+        width: 90% !important;
+    }
+
+    div.dash3 div.container-p table thead tr th {
+        font-size: 11pt !important;
+    }
+
+    div.dash3 div.container-p table thead tr th:first-child {
+        width: 25% !important;
+    }
+
+    div.dash3 div.container-p table thead tr th:nth-child(2) {
+        width: 30% !important;
+    }
+
+    div.dash3 div.container-p table tbody {
+        height: 380px;
+    }
+
+    div.dash3 div.container-p table tbody tr th:first-child {
+        width: 25% !important;
+    }
+
+    div.dash3 div.container-p table tbody tr th:nth-child(2) {
+        width: 30% !important;
+    }
+
+    div.dash3 div.container-p table tbody tr th,
+    div.dash3 div.container-p table tbody tr td {
+        font-size: 11pt !important;
+    }
+
+    div.dash3 div.container-p div.card p {
+        font-size: 14pt;
+    }
+
+    div.dash3 div.container-p button.btn.btn-personalizado {
+        font-size: 11pt !important;
+    }
+
+    div.dash div.streaming {
+        height: 94.4vh;
+    }
+}
+
+@media (max-width: 990px) {
+    div.dash3 div.container-p div.card {
+        margin-bottom: 20px;
+    }
+}

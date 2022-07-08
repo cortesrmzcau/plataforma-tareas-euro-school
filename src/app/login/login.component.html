@@ -1,0 +1,24 @@
+<div class="login" style="height: 100vh;">
+    <div class="flex-center flex-column">
+        <div class="row">
+            <div class="col-lg-12">
+                <form [formGroup]="formLogin" (submit)="formLoginAuth()" autocomplete="off">
+                    <img src="../../assets/logo.png" alt="" height="70">
+                    <p class="inicio-sesion fuente-sfui-bold">Inicio de Sesión</p>
+                    <div class="md-form">
+                        <input mdbInput placeholder="Nombre" type="text" id="nombreFL"
+                        class="form-control" formControlName="nombreFL">
+                    </div>
+                    <div class="md-form">
+                        <input mdbInput placeholder="Cédula" type="text" id="cedulaFL"
+                        class="form-control" formControlName="cedulaFL">
+                    </div>
+                    <div class="md-form ingresar">
+                        <button class="btn-personalizado" type="submit" mdbBtn color="primary"
+                            [disabled]="formLogin.invalid">Ingresar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

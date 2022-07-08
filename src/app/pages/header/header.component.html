@@ -1,0 +1,40 @@
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark pink ie-nav fixed-top" [containerInside]="false">
+    <mdb-navbar-brand>
+        <a class="logo navbar-brand" routerLinkActive="active"
+        routerLink="/dashboard" *ngIf="alumno">Euro School - {{ grado }}</a>
+        <a class="logo navbar-brand" routerLinkActive="active"
+        routerLink="/dashboard" *ngIf="maestro">Euro School - Maestro</a>
+    </mdb-navbar-brand>
+    <links>
+        <ul class="navbar-nav mr-auto">
+        </ul>
+        <ul class="navbar-nav nav-flex-icons">
+            <li class="nav-item avatar dropdown" dropdown>
+                <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light"
+                    mdbWavesEffect>
+                <img src="../../../assets/no-image.png" height="35" alt=""
+                    class="rounded-circle z-depth-0"></a>
+                <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+                    <div class="menu-options">
+                        <div class="p1">
+                            <img src="../../../assets/no-image.png" height="87" alt="">
+                            <div *ngIf="alumno">
+                                <p>{{ nombre }}</p>
+                                <p>{{ grado }} - {{ cedula }}</p>
+                            </div>
+                            <div *ngIf="maestro">
+                                <p>{{ nombre }}</p>
+                                <p>Maestro - {{ grado }}</p>
+                                <p>{{ cedula }}</p>
+                            </div>
+                        </div>
+                        <div class="p4" routerLinkActive="active" (click)="salir()">
+                            <mdb-icon fas icon="power-off"></mdb-icon>
+                            <p>Salir</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </links>
+</mdb-navbar>

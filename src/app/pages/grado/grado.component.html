@@ -1,0 +1,215 @@
+<div class="dash">
+    <div class="container-n">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="tablaTareas">
+                        <div class="ibb">
+                            <select class="form-control" (change)="selectSemana($event.target.value)">
+                                <option disabled selected value="undefined">
+                                    Seleccionar semana</option>
+                                <option *ngFor="let tareaS of verSemanas;"
+                                    [value]="tareaS.id">{{ tareaS.nombre }}</option>
+                            </select>
+                            <button class="btn-personalizado progreso-alumno" data-toggle="mdbModal"
+                            (click)="modalAgregarTarea.show()">Agregar tarea</button>
+                            <button class="btn-personalizado progreso-alumno" routerLinkActive="active"
+                            [routerLink]="['/alumnos', parametroUrl ]">Revisión de tareas</button>
+                        </div>
+                        <div *ngIf="no_semana">
+                            <div class="no-semana">
+                                <mdb-icon fas icon="question-circle"></mdb-icon>
+                                <p>Seleccione una semana para ver las tareas asignadas a sus alumnos</p>
+                            </div>
+                        </div>
+                        <div *ngIf="no_tareas">
+                            <div class="no-tareas">
+                                <mdb-icon fas icon="times-circle"></mdb-icon>
+                                <p>No se encuentran tareas registradas en la semana seleccionada</p>
+                            </div>
+                        </div>
+                        <div *ngIf="si_tareas">
+                            <table mdbTable>
+                                <thead class="black white-text">
+                                <tr>
+                                    <th scope="col">N°</th>
+                                    <th>Nombre</th>
+                                    <th>Grado</th>
+                                    <th>Fecha</th>
+                                    <th>Opciones</th>
+                                </tr>
+                                </thead>
+                                <tbody class="scrollbar scrollbar-primary">
+                                    <tr *ngFor="let tarea of tareasMaestro; let indice = index">
+                                        <td> {{ indice + 1 }} </td>
+                                        <td> {{ tarea.nombre }} </td>
+                                        <td> {{ tarea.grado }} </td>
+                                        <td> {{ tarea.fecha }} </td>
+                                        <td>
+                                            <div class="f">
+                                                <mdb-icon far icon="eye"
+                                                    (click)="modalTareaMaestro.show();
+                                                        verTareaMaestro(
+                                                            tarea.nombre,
+                                                            tarea.tipo,
+                                                            tarea.url
+                                                        )">
+                                                </mdb-icon>
+                                                <mdb-icon fas icon="trash"
+                                                    (click)="eliminarTarea(tarea.archivoId, tarea.nombre)"></mdb-icon>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div mdbModal #modalAgregarTarea="mdbModal" class="modal fade left" id="frameModalTop" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog a" role="document">
+        <div class="modal-content" id="modalAT">
+            <div class="modal-header">
+                <p>{{ textTarea }} - {{ parametroUrl }}</p>
+            </div>
+            <div class="modal-body">
+                <form #formGuardarTareaMaestro="ngForm" (ngSubmit)="guardarTareaMaestro(formGuardarTareaMaestro)"
+                    autocomplete="off">
+                    <div class="cargando" id="cargando">
+                        <div>
+                            <img src="../../../assets/cargando.gif" height="80px" alt="">
+                            <p>Cargando ...</p>
+                        </div>
+                    </div>
+                    <div class="formulario" id="formulario">
+                        <div class="md-form">
+                            <input type="hidden" name="archivoId" #archivoId="ngModel" class="form-control"
+                            placeholder="Key" [(ngModel)]="_GradoService.tareaGrado.archivoId">
+                        </div>
+                        <div class="md-form">
+                            <input type="text" name="nombre" #nombre="ngModel" class="form-control"
+                            placeholder="Nombre" [(ngModel)]="_GradoService.tareaGrado.nombre" required>
+                        </div>
+                        <div class="md-form i">
+                            <div #noEventInput class="input-real">
+                                <input class="file-path" type="text" placeholder="Tarea" id="inputTarea"
+                                name="url" #url="ngModel" [ngModel]="_GradoService.tareaGrado.url" required>
+                            </div>
+                            <div mdbBtn class="waves-light waves-effect mi-input">
+                                <input type="file" (change)="detectFileFotoPortada($event)">
+                                <span class="text-center">Examinar</span>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <select name="tipo" [(ngModel)]="_GradoService.tareaGrado.tipo" class="form-control"
+                                #tipo="ngModel" required>
+                                <option disabled selected value="undefined">Seleccionar tipo archivo</option>
+                                <option *ngFor="let c of tipos; let x = index" [ngValue]="c">{{ c }}</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <select name="grado" [(ngModel)]="_GradoService.tareaGrado.grado" class="form-control"
+                                #grado="ngModel" required>
+                                <option disabled selected value="undefined">Seleccionar Grado</option>
+                                <option *ngFor="let c of grados; let x = index" [ngValue]="c">{{ c }}</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <select name="semanaId" [(ngModel)]="_GradoService.tareaGrado.semanaId" class="form-control"
+                                #semanaId="ngModel" required>
+                                <option disabled selected value="undefined">Seleccionar Semana</option>
+                                <option *ngFor="let s of semanas;" [ngValue]="s.id">{{ s.nombre }}</option>
+                            </select>
+                        </div>
+                        <div class="btns">
+                            <button type="submit" [disabled]="formGuardarTareaMaestro.invalid"
+                                class="btn btn-personalizado">Guardar
+                            </button>
+                            <button type="button" class="btn btn-personalizado"
+                                (click)="modalAgregarTarea.hide(); resetearForm(formGuardarTareaMaestro)"
+                                id="btnCancelar">Cancelar
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div mdbModal #modalTareaMaestro="mdbModal" class="modal fade left" id="frameModalTop1" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg verTareaMaestro" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close pull-right" aria-label="Close" (click)="modalTareaMaestro.hide()">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <p>Tarea: {{ nombreTarea }}</p>
+            </div>
+            <div class="modal-body">
+                <div *ngIf="select_video">
+                    <div class="video">
+                        <video class="video-fluid z-depth-1" controls>
+                            <source [src]="urlArchivo" type="video/mp4" />
+                        </video>
+                    </div>
+                </div>
+                <div *ngIf="select_img">
+                    <div>
+                        <div class="img-container img-scroll">
+                            <img [src]="urlArchivo" class="img-responsive" alt="Imagen no encontrada">
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="select_audio">
+                    <div class="audio">
+                        <audio controls>
+                            <source [src]="urlArchivo" type="audio/mp3">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+                <div *ngIf="select_pdf">
+                    <div class="pdf-container">
+                        <iframe [src]="urlArchivo" class="scrollbar scrollbar-primary"></iframe>
+                    </div>
+                </div>
+                <div *ngIf="select_word">
+                    <div class="word">
+                        <a [href]="urlArchivo" download>Click para descargar archivo de Word</a>
+                    </div>
+                </div>
+                <div *ngIf="select_power">
+                    <div class="power">
+                        <a [href]="urlArchivo" download>Click para descargar archivo de Power Point</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div mdbModal #subiendoTareaMaestro="mdbModal" class="modal fade left" id="frameModalTop1" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog subiendoTareaMaestro" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close pull-right" aria-label="Close" (click)="modalTareaMaestro.hide()">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Subiendo tarea</p>
+            </div>
+        </div>
+    </div>
+</div>

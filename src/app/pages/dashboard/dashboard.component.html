@@ -1,0 +1,62 @@
+<div class="dash">
+  <div *ngIf="alumno">
+    <div class="background-image-banner">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-12">
+            <p>Bienvenidos a Euro School Online</p>
+            <p>La mejor manera de aprender desde tu hogar</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lecciones">
+      <div class="container a">
+        <div class="row b">
+          <div *ngFor="let semana of semanasAlumno;" class="col-sm-12 col-md-4 col-xl-4">
+            <div class="card" >
+              <div class="view overlay">
+                <img class="card-img-top" src="{{ semana.img }}"
+                    alt="No disponible">
+                <a href="#!">
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+              <div class="card-body">
+                <h4 class="card-title">{{ semana.nombre }}</h4>
+                <a href="#" class="btn-personalizado" routerLinkActive="active"
+                    [routerLink]="['/leccion', semana.value ]">Acceder</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="maestro">
+    <div class="lecciones">
+      <div class="container a">
+        <div class="row b">
+          <div class="col-sm-12 col-md-4 col-xl-4">
+            <div class="card">
+              <div class="view overlay">
+                <img class="card-img-top" src="../../../assets/classroom.jpg"
+                  alt="No disponible">
+                <a>
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+              <div class="card-body">
+                <h4 class="card-title"> {{ grado }} </h4>
+                <a href="#" class="btn btn-personalizado" routerLinkActive="active"
+                    [routerLink]="['/grado', grado]">Acceder</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

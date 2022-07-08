@@ -1,0 +1,106 @@
+<div class="dash">
+    <div class="container-n">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="tablaAlumnos">
+                        <div class="ibb">
+                            <select class="form-control" (change)="selectSemanaTA($event.target.value)">
+                                <option disabled selected value="undefined">
+                                    Seleccionar semana</option>
+                                <option *ngFor="let tareaS of verSemanas;"
+                                    [value]="tareaS.value">{{ tareaS.nombre }}</option>
+                            </select>
+                            <button class="btn-personalizado progreso-alumno" routerLinkActive="active"
+                            [routerLink]="['/grado', gradoAlumnos ]">Tarea para alumnos</button>
+                        </div>
+                        <div *ngIf="no_tarea">
+                            <div class="no-tareas">
+                                <mdb-icon fas icon="question-circle"></mdb-icon>
+                                <p>Seleccione una semana para ver las tareas de los alumnos</p>
+                            </div>
+                        </div>
+                        <div *ngIf="no_tareas_alumnos">
+                            <div class="no-tareas">
+                                <mdb-icon fas icon="times-circle"></mdb-icon>
+                                <p>No se encuentran tareas realizadas por los alumnos en la semana</p>
+                            </div>
+                        </div>
+                        <div *ngIf="si_tareas_alumnos">
+                            <table mdbTable>
+                                <thead class="black white-text">
+                                <tr>
+                                    <th scope="col">N°</th>
+                                    <th>Alumno</th>
+                                    <th>Nombre Tarea</th>
+                                    <th>Grado</th>
+                                    <th>Calificación</th>
+                                    <th>Opciones</th>
+                                    <th>Fecha de entrega</th>
+                                </tr>
+                                </thead>
+                                <tbody class="scrollbar scrollbar-primary">
+                                <tr mdbTableCol *ngFor="let tareaA of tareasAlumnos; let indice = index">
+                                    <td>{{ indice + 1 }}</td>
+                                    <td>{{ tareaA.student.nombre }}</td>
+                                    <td>{{ tareaA.nombre }}</td>
+                                    <td>{{ tareaA.grado }}</td>
+                                    <td>{{ tareaA.calificacion }}</td>
+                                    <td>
+                                        <div class="f">
+                                            <a [href]="tareaA.url" target="_blank">
+                                                <mdb-icon far icon="eye">
+                                                </mdb-icon>
+                                            </a>
+                                            <mdb-icon fas icon="user-edit" (click)="calificacionAlumno.show();
+                                                calificarAlumno(tareaA)">
+                                            </mdb-icon>
+                                        </div>
+                                    </td>
+                                    <td>{{ tareaA.fecha }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div mdbModal #calificacionAlumno="mdbModal" class="modal fade left" id="frameModalTop1" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog calificacionAlumno" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close pull-right" aria-label="Close" (click)="calificacionAlumno.hide()">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <p>Tarea: {{ tareaAlumnoNombre }}</p>
+            </div>
+            <div class="modal-body">
+                <form #formCalificacionAlumno="ngForm" (ngSubmit)="calificarTareaAlumno(formCalificacionAlumno)">
+                    <div class="md-form">
+                        <input type="hidden" name="id" #id="ngModel" class="form-control"
+                        placeholder="key" [(ngModel)]="_GradoService.tareaAlumno.id">
+                    </div>
+                    <div class="input-group">
+                        <select name="calificacion" [(ngModel)]="_GradoService.tareaAlumno.calificacion"
+                            class="form-control" #calificacion="ngModel" required>
+                            <option *ngFor="let c of calificaciones; let x = index" [ngValue]="c">{{ c }}</option>
+                        </select>
+                    </div>
+                    <div class="btns">
+                        <button type="submit" [disabled]="formCalificacionAlumno.invalid"
+                            class="btn btn-personalizado g">Guardar</button>
+                        <button type="button" class="btn-personalizado"
+                            (click)="calificacionAlumno.hide(); resetearFormTA(formCalificacionAlumno)"
+                            id="btnCancelarTA">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ccpyeu": {
+      "hosting": {
+        "mdb-angular-free": [
+          "ccpyeu"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ccpyeu"
+  }
+}

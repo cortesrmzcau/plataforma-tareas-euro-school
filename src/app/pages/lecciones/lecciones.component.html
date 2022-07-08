@@ -1,0 +1,232 @@
+<div class="dash3">
+    <div class="container-p">
+        <div class="row l">
+            <div class="col-sm-12 col-lg-12">
+                <div *ngIf="no_selected">
+                    <div class="no-selected">
+                        <p>Seleccione una tarea para poder ser visualizada</p>
+                    </div>
+                </div>
+                <div *ngIf="select_video">
+                    <iframe [src]="url2" frameborder="0"></iframe>
+                </div>
+                <div *ngIf="select_img">
+                    <div class="img-container img-scroll">
+                        <img [src]="url2" alt="">
+                    </div>
+                </div>
+                <div *ngIf="select_audio">
+                    <div class="audio">
+                        <audio controls>
+                            <source [src]="url2" type="audio/mp3">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+                <div *ngIf="select_pdf">
+                    <div class="pdf-container">
+                        <iframe [src]="url2" class="scrollbar scrollbar-primary"></iframe>
+                    </div>
+                </div>
+                <div *ngIf="select_word">
+                    <div class="word">
+                        <a [href]="url2" download>Click para descargar la tarea de Word</a>
+                    </div>
+                </div>
+                <div *ngIf="select_power">
+                    <div class="power">
+                        <a [href]="url2" download>Click para descargar la tarea de Power Point</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tablas">
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="button" mdbBtn id="btn_tareasPendientes"
+                    (click)="mostrarTablaPendientes()">Tareas</button>
+                    <button type="button" mdbBtn id="btn_tareasEntregadas"
+                        (click)="mostrarTablaMisTareas()">Tareas subidas</button>
+                </div>
+            </div>
+            <div *ngIf="tablaTareasMestro">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <table mdbTable hover="true">
+                            <thead class="black white-text">
+                                <tr>
+                                    <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+                                </tr>
+                            </thead>
+                            <tbody class="scrollbar scrollbar-primary">
+                                <tr class="force-overflow" mdbTableCol *ngFor="let tarea of tareasMaestro; let indice = index">
+                                    <td> {{ indice + 1 }} </td>
+                                    <td> {{ tarea.nombre }} </td>
+                                    <td>
+                                        <mdb-icon fas icon="eye"
+                                            (click)="visualizarTarea(tarea.nombre, tarea.tipo, tarea.url)">
+                                        </mdb-icon>
+                                    </td>
+                                    <td>
+                                        <div *ngIf="tarea.url">
+                                            <mdb-icon fas icon="upload"
+                                                (click)="subirTareaAlumno.show(); visualizarTarea2(tarea)">
+                                            </mdb-icon>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="tablaMisTareas">
+                <div class="row">
+                    <div class="col-sm-12 col-lg-12">
+                        <table mdbTable hover="true">
+                            <thead class="black white-text">
+                                <tr>
+                                    <th *ngFor="let head of headElements2" scope="col">{{head}} </th>
+                                </tr>
+                            </thead>
+                            <tbody class="scrollbar scrollbar-primary">
+                                <tr class="force-overflow" mdbTableCol *ngFor="let tarea of misTareas; let indice = index">
+                                    <td> {{ indice + 1 }} </td>
+                                    <td> {{ tarea.nombre }} </td>
+                                    <td>
+                                        <div *ngIf="tarea.calificacion == 0">
+                                            No calificada
+                                        </div>
+                                        <div *ngIf="tarea.calificacion != 0">
+                                            {{ tarea.calificacion }}
+                                        </div>
+                                    </td>
+                                    <td> {{ tarea.fecha }} </td>
+                                    <td>
+                                        <div *ngIf="tarea.url">
+                                            <a href="{{ tarea.url }}" target="_blank">
+                                                <mdb-icon fas icon="download"></mdb-icon>
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div *ngIf="tarea.url">
+                                            <mdb-icon fas icon="trash" (click)="borrarMiTarea(tarea)"></mdb-icon>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--<div class="row">
+            <div class="col-sm-12 col-lg-5">
+                <table mdbTable hover="true">
+                    <thead class="black white-text">
+                        <tr>
+                            <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+                        </tr>
+                    </thead>
+                    <tbody class="scrollbar scrollbar-primary">
+                        <tr class="force-overflow" mdbTableCol *ngFor="let tarea of tareasMaestro; let indice = index">
+                            <td> {{ indice + 1 }} </td>
+                            <td> {{ tarea.nombre }} </td>
+                            <td>
+                                <mdb-icon fas icon="eye"
+                                    (click)="visualizarTarea(tarea.nombre, tarea.tipo, tarea.url)">
+                                </mdb-icon>
+                            </td>
+                            <td>
+                                <div *ngIf="!(tarea.url)">
+                                    <mdb-icon fas icon="upload"
+                                        (click)="subirTareaAlumno.show(); visualizarTarea2(tarea)">
+                                    </mdb-icon>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm-12 col-lg-7">
+                <table mdbTable hover="true">
+                    <thead class="black white-text">
+                        <tr>
+                            <th *ngFor="let head of headElements2" scope="col">{{head}} </th>
+                        </tr>
+                    </thead>
+                    <tbody class="scrollbar scrollbar-primary">
+                        <tr class="force-overflow" mdbTableCol *ngFor="let tarea of misTareas; let indice = index">
+                            <td> {{ indice + 1 }} </td>
+                            <td> {{ tarea.nombre }} </td>
+                            <td>
+                                <div *ngIf="tarea.calificacion == 0">
+                                    No calificada
+                                </div>
+                                <div *ngIf="tarea.calificacion != 0">
+                                    {{ tarea.calificacion }}
+                                </div>
+                            </td>
+                            <td> {{ tarea.fecha }} </td>
+                            <td>
+                                <div *ngIf="tarea.url">
+                                    <a href="{{ tarea.url }}" target="_blank">
+                                        <mdb-icon fas icon="download"></mdb-icon>
+                                    </a>
+                                </div>
+                            </td>
+                            <td>
+                                <div *ngIf="tarea.url">
+                                    <mdb-icon fas icon="trash" (click)="borrarMiTarea(tarea)"></mdb-icon>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>-->
+    </div>
+</div>
+
+
+<div mdbModal #subirTareaAlumno="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+    <div class="modal-dialog subirTarea" role="document">
+        <div class="modal-content" id="modalAT">
+            <div class="modal-header">
+            <button type="button" class="close pull-right" aria-label="Close" (click)="subirTareaAlumno.hide()">
+                <span aria-hidden="true">×</span>
+            </button>
+            <p class="modal-title w-100" id="myModalLabel">Tarea {{ nombreTareaSubir }}</p>
+            </div>
+            <div class="modal-body">
+                <form #formSubirTareaA="ngForm" (ngSubmit)="formSubirTareaAlumno()">
+                    <div class="cargando" id="cargando">
+                        <div>
+                            <img src="../../../assets/cargando.gif" height="80px" alt="">
+                            <p>Subiendo tarea ...</p>
+                        </div>
+                    </div>
+                    <div class="formulario" id="formulario">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input"
+                                (change)="onFileChange($event.target.files)"
+                                id="importFile" name="url" #url="ngModel"
+                                [(ngModel)]="_LeccionService.subirTarea.url"
+                                required>
+                            <label class="custom-file-label" #labelImport for="importFile">
+                            <i class="fas fa-search"></i> Buscar</label>
+                        </div>
+                        <div class="btnn">
+                            <button class="btn btn-personalizado" [disabled]="formSubirTareaA.invalid">Subir
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
